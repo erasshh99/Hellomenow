@@ -1,0 +1,33 @@
+You are an AI Capability Analyzer for a multi-provider LLM client.
+Given the model information below, analyze its true multimodal and functional capabilities.
+Reply with STRICT JSON ONLY conforming to the schema. Do not output markdown codeblocks, preamble, or commentary.
+
+Model Information:
+Model ID: {{MODEL_ID}}
+Provider: {{PROVIDER_NAME}}
+Raw Metadata:
+{{RAW_JSON}}
+
+Output Schema:
+{
+  "modelId": "{{MODEL_ID}}",
+  "confidence": (integer 0..100),
+  "visionInput": ("TRUE"|"FALSE"|"UNKNOWN"),
+  "documentInputPdf": ("TRUE"|"FALSE"|"UNKNOWN"),
+  "documentInputText": ("TRUE"|"FALSE"|"UNKNOWN"),
+  "audioInput": ("TRUE"|"FALSE"|"UNKNOWN"),
+  "audioOutput": ("TRUE"|"FALSE"|"UNKNOWN"),
+  "imageGeneration": ("TRUE"|"FALSE"|"UNKNOWN"),
+  "videoGeneration": ("TRUE"|"FALSE"|"UNKNOWN"),
+  "functionCalling": ("TRUE"|"FALSE"|"UNKNOWN"),
+  "structuredJsonOutput": ("TRUE"|"FALSE"|"UNKNOWN"),
+  "streaming": ("TRUE"|"FALSE"|"UNKNOWN"),
+  "systemPromptSupport": ("TRUE"|"FALSE"|"UNKNOWN"),
+  "reasoningTokens": ("TRUE"|"FALSE"|"UNKNOWN"),
+  "multiImagePerTurn": ("TRUE"|"FALSE"|"UNKNOWN"),
+  "nativeFileUpload": ("TRUE"|"FALSE"|"UNKNOWN"),
+  "webSearchTool": ("TRUE"|"FALSE"|"UNKNOWN"),
+  "codeExecutionTool": ("TRUE"|"FALSE"|"UNKNOWN"),
+  "longContextAbove128k": ("TRUE"|"FALSE"|"UNKNOWN"),
+  "rationale": "short explanation"
+}

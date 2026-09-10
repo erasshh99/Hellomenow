@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.OmniChat" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/omni_primary</item>
+        <item name="colorOnPrimary">@color/omni_on_primary</item>
+        <item name="colorPrimaryContainer">@color/omni_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/omni_on_primary_container</item>
+
+        <item name="colorSecondary">@color/omni_secondary</item>
+        <item name="colorOnSecondary">@color/omni_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/omni_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/omni_on_secondary_container</item>
+
+        <item name="colorTertiary">@color/omni_tertiary</item>
+        <item name="colorOnTertiary">@color/omni_on_tertiary</item>
+
+        <item name="colorError">@color/omni_error</item>
+        <item name="colorOnError">@color/omni_on_error</item>
+
+        <item name="android:colorBackground">@color/omni_background_light</item>
+        <item name="colorSurface">@color/omni_surface_light</item>
+        <item name="colorOnSurface">@color/omni_on_surface_light</item>
+        <item name="colorSurfaceVariant">@color/omni_surface_variant_light</item>
+        <item name="colorOnSurfaceVariant">@color/omni_on_surface_variant_light</item>
+        <item name="colorOutline">@color/omni_outline_light</item>
+
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

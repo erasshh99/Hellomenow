@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">OmniChat</string>
+    <string name="title_conversations">Conversations</string>
+    <string name="title_providers">Providers</string>
+    <string name="title_models">Models</string>
+    <string name="title_media_gallery">Media Gallery</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_inspector">Capability Inspector</string>
+    <string name="new_chat">New Chat</string>
+    <string name="ask_omnichat_hint">Type a message or /command…</string>
+    <string name="send">Send</string>
+    <string name="stop">Stop</string>
+    <string name="test_connection">Test Connection</string>
+    <string name="sync_catalog">Sync Catalog</string>
+    <string name="detect_capabilities">Detect Capabilities</string>
+    <string name="run_probe">Probe Model</string>
+    <string name="save_to_gallery">Save to Gallery</string>
+    <string name="retry">Retry</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="delete">Delete</string>
+    <string name="copy">Copy</string>
+    <string name="share">Share</string>
+    <string name="switch_model">Switch Model</string>
+</resources>

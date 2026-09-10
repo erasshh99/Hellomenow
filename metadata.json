@@ -1,0 +1,6 @@
+{
+  "name": "OmniChat",
+  "description": "Universal, provider-agnostic AI client with autonomous capability discovery, mid-conversation model switching, and native inline media rendering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
