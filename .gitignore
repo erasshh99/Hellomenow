@@ -16,3 +16,7 @@
 local.properties
 .env
 debug.keystore
+
+# Strix upstream clone (separate git repo) and scan output
+/strix/
+strix_runs/
