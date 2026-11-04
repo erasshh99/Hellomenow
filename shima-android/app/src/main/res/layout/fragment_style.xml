@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="32dp">
+
+        <com.piyush.island.ui.island.IslandPreviewView
+            android:id="@+id/preview"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="?attr/colorSurfaceVariant"
+            android:importantForAccessibility="no" />
+
+        <TextView
+            style="@style/Widget.Shima.SectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/theme_light" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/group_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleSelection="true" />
+
+        <TextView
+            style="@style/Widget.Shima.SectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/style_colour" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/group_palette"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/switch_material_you"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:minHeight="48dp"
+            android:text="@string/follow_wallpaper" />
+
+        <TextView
+            style="@style/Widget.Shima.SectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/width" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slider_width"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stepSize="4"
+            android:valueFrom="120"
+            android:valueTo="360" />
+
+        <TextView
+            style="@style/Widget.Shima.SectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/height" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slider_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stepSize="2"
+            android:valueFrom="24"
+            android:valueTo="64" />
+
+        <TextView
+            style="@style/Widget.Shima.SectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/corner_radius" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slider_radius"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stepSize="1"
+            android:valueFrom="0"
+            android:valueTo="32" />
+
+        <TextView
+            style="@style/Widget.Shima.SectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/offset_x" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slider_offset_x"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stepSize="2"
+            android:valueFrom="-120"
+            android:valueTo="120" />
+
+        <TextView
+            style="@style/Widget.Shima.SectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/offset_y" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slider_offset_y"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stepSize="2"
+            android:valueFrom="-40"
+            android:valueTo="120" />
+
+        <TextView
+            style="@style/Widget.Shima.SectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/transparency" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slider_transparency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stepSize="5"
+            android:valueFrom="0"
+            android:valueTo="60" />
+
+        <TextView
+            style="@style/Widget.Shima.SectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/outline" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slider_outline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stepSize="1"
+            android:valueFrom="0"
+            android:valueTo="6" />
+
+        <TextView
+            style="@style/Widget.Shima.SectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/style_motion" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/group_animation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleSelection="true" />
+
+        <TextView
+            style="@style/Widget.Shima.SectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/style_position" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/group_cutout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleSelection="true" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/switch_fit_cutout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/fit_cutout" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/switch_hide_fullscreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/hide_in_fullscreen" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/switch_companion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:minHeight="48dp"
+            android:text="@string/style_companion" />
+    </LinearLayout>
+</ScrollView>

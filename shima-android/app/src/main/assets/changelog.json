@@ -1,0 +1,151 @@
+[
+  {
+    "version": "0.4.0",
+    "date": "2026-11-04",
+    "channel": "Stable",
+    "headline": "A rebuilt Shima",
+    "summary": "The same island, rebuilt from the ground up: every alert, every gesture and every palette, with a cleaner setup.",
+    "changes": [
+      {
+        "kind": "New",
+        "text": "The island is drawn by its own view, so the collapsed capsule and the open card share the same shape."
+      },
+      {
+        "kind": "New",
+        "text": "Live updates from timers, rides and deliveries, read from on-going notifications."
+      },
+      {
+        "kind": "New",
+        "text": "The app row holds up to 10 apps and every card can be tuned part by part."
+      },
+      {
+        "kind": "Improved",
+        "text": "Backups are a plain JSON file you can read, edit and put back on another phone."
+      },
+      {
+        "kind": "Improved",
+        "text": "The camera cutout is measured on every screen edge and orientation, including the inner screen of a foldable."
+      }
+    ]
+  },
+  {
+    "version": "0.3.0",
+    "date": "2026-10-24",
+    "channel": "Stable",
+    "headline": "More control",
+    "summary": "Rules, cards and a companion pill.",
+    "changes": [
+      {
+        "kind": "New",
+        "text": "Rules: one gesture can do different things depending on what the phone is doing."
+      },
+      {
+        "kind": "New",
+        "text": "A companion pill that sits next to the island."
+      },
+      {
+        "kind": "New",
+        "text": "Every card can be assembled part by part."
+      }
+    ]
+  },
+  {
+    "version": "0.2.0",
+    "date": "2026-10-19",
+    "channel": "Stable",
+    "headline": "New alert, new looks",
+    "summary": "An alert for uninstalled apps, more ways to style the island, and lots of fixes.",
+    "changes": [
+      {
+        "kind": "New",
+        "text": "New alert: see which app you just uninstalled.",
+        "alert": "app0"
+      },
+      {
+        "kind": "New",
+        "text": "New alert: see your screenshot on the island the moment you take it, with Share, Copy, Edit and Delete.",
+        "alert": "shot"
+      },
+      {
+        "kind": "New",
+        "text": "Style the collapsed and expanded island separately. Set the transparency, outline and shadow for each.",
+        "screen": "shape"
+      },
+      {
+        "kind": "New",
+        "text": "You can now swipe up on the expanded island to close it. You can choose how cards close in each alert's settings.",
+        "alert": "chg1",
+        "setting": "closeOn"
+      },
+      {
+        "kind": "New",
+        "text": "Works on foldables: the island now shows on the inner screen of phones like the Galaxy Z Fold8."
+      },
+      {
+        "kind": "New",
+        "text": "Update without leaving the app. New versions download in the background, then tap Restart to install."
+      },
+      {
+        "kind": "New",
+        "text": "See what's new automatically after each update."
+      },
+      {
+        "kind": "Improved",
+        "text": "The App row now holds up to 10 apps. Swipe sideways to see the rest."
+      },
+      {
+        "kind": "Improved",
+        "text": "Swipe between tabs in alert settings, and between categories when picking an action."
+      },
+      {
+        "kind": "Improved",
+        "text": "Smoother right after you install or update the app."
+      },
+      {
+        "kind": "Fixed",
+        "text": "Fixed an empty card showing after rotating the phone with a card open."
+      },
+      {
+        "kind": "Fixed",
+        "text": "Fixed a small stutter when opening your music app from the music card."
+      },
+      {
+        "kind": "Fixed",
+        "text": "Fixed alerts keeping their old colours after you changed or restored a palette."
+      },
+      {
+        "kind": "Fixed",
+        "text": "Fixed the tab bar flashing when opening the app from its notification."
+      }
+    ]
+  },
+  {
+    "version": "0.1.0",
+    "date": "2026-09-14",
+    "channel": "Stable",
+    "headline": "The first island",
+    "summary": "A capsule over the status bar that answers to what the phone is doing, and four tabs to make it yours.",
+    "changes": [
+      {
+        "kind": "New",
+        "text": "The island rests as the camera and widens for music, charging, the torch, volume and the mic and camera indicators."
+      },
+      {
+        "kind": "New",
+        "text": "Tap the island to expand it into a card for whatever it is carrying, with the transport controls on the music one."
+      },
+      {
+        "kind": "New",
+        "text": "Position & geometry calibrates the island against your phone's real cutout, per screen edge and per orientation."
+      },
+      {
+        "kind": "New",
+        "text": "Gestures: assign a tap, a long press or a swipe to an app, a widget or a card of your own."
+      },
+      {
+        "kind": "New",
+        "text": "Seven palettes, light and dark, and Material You if you would rather the island followed your wallpaper."
+      }
+    ]
+  }
+]

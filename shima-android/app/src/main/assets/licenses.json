@@ -1,0 +1,258 @@
+[
+  {
+    "groupId": "androidx.core",
+    "artifactId": "core-ktx",
+    "version": "1.15.0",
+    "name": "Core KTX",
+    "spdxLicenses": [
+      {
+        "identifier": "Apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0"
+      }
+    ],
+    "scm": {
+      "url": "https://github.com/androidx.core"
+    }
+  },
+  {
+    "groupId": "androidx.appcompat",
+    "artifactId": "appcompat",
+    "version": "1.7.0",
+    "name": "AppCompat",
+    "spdxLicenses": [
+      {
+        "identifier": "Apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0"
+      }
+    ],
+    "scm": {
+      "url": "https://github.com/androidx.appcompat"
+    }
+  },
+  {
+    "groupId": "com.google.android.material",
+    "artifactId": "material",
+    "version": "1.12.0",
+    "name": "Material Components for Android",
+    "spdxLicenses": [
+      {
+        "identifier": "Apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0"
+      }
+    ],
+    "scm": {
+      "url": "https://github.com/com.google.android.material"
+    }
+  },
+  {
+    "groupId": "androidx.constraintlayout",
+    "artifactId": "constraintlayout",
+    "version": "2.2.0",
+    "name": "ConstraintLayout",
+    "spdxLicenses": [
+      {
+        "identifier": "Apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0"
+      }
+    ],
+    "scm": {
+      "url": "https://github.com/androidx.constraintlayout"
+    }
+  },
+  {
+    "groupId": "androidx.recyclerview",
+    "artifactId": "recyclerview",
+    "version": "1.4.0",
+    "name": "RecyclerView",
+    "spdxLicenses": [
+      {
+        "identifier": "Apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0"
+      }
+    ],
+    "scm": {
+      "url": "https://github.com/androidx.recyclerview"
+    }
+  },
+  {
+    "groupId": "androidx.fragment",
+    "artifactId": "fragment-ktx",
+    "version": "1.8.5",
+    "name": "Fragment KTX",
+    "spdxLicenses": [
+      {
+        "identifier": "Apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0"
+      }
+    ],
+    "scm": {
+      "url": "https://github.com/androidx.fragment"
+    }
+  },
+  {
+    "groupId": "androidx.lifecycle",
+    "artifactId": "lifecycle-runtime-ktx",
+    "version": "2.8.7",
+    "name": "Lifecycle Runtime KTX",
+    "spdxLicenses": [
+      {
+        "identifier": "Apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0"
+      }
+    ],
+    "scm": {
+      "url": "https://github.com/androidx.lifecycle"
+    }
+  },
+  {
+    "groupId": "androidx.lifecycle",
+    "artifactId": "lifecycle-service",
+    "version": "2.8.7",
+    "name": "Lifecycle Service",
+    "spdxLicenses": [
+      {
+        "identifier": "Apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0"
+      }
+    ],
+    "scm": {
+      "url": "https://github.com/androidx.lifecycle"
+    }
+  },
+  {
+    "groupId": "androidx.lifecycle",
+    "artifactId": "lifecycle-viewmodel-ktx",
+    "version": "2.8.7",
+    "name": "Lifecycle ViewModel KTX",
+    "spdxLicenses": [
+      {
+        "identifier": "Apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0"
+      }
+    ],
+    "scm": {
+      "url": "https://github.com/androidx.lifecycle"
+    }
+  },
+  {
+    "groupId": "androidx.activity",
+    "artifactId": "activity-ktx",
+    "version": "1.9.3",
+    "name": "Activity KTX",
+    "spdxLicenses": [
+      {
+        "identifier": "Apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0"
+      }
+    ],
+    "scm": {
+      "url": "https://github.com/androidx.activity"
+    }
+  },
+  {
+    "groupId": "org.jetbrains.kotlinx",
+    "artifactId": "kotlinx-coroutines-android",
+    "version": "1.9.0",
+    "name": "Kotlin Coroutines for Android",
+    "spdxLicenses": [
+      {
+        "identifier": "Apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0"
+      }
+    ],
+    "scm": {
+      "url": "https://github.com/org.jetbrains.kotlinx"
+    }
+  },
+  {
+    "groupId": "com.google.android.flexbox",
+    "artifactId": "flexbox",
+    "version": "3.0.0",
+    "name": "Flexbox Layout",
+    "spdxLicenses": [
+      {
+        "identifier": "Apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0"
+      }
+    ],
+    "scm": {
+      "url": "https://github.com/com.google.android.flexbox"
+    }
+  },
+  {
+    "groupId": "com.android.billingclient",
+    "artifactId": "billing-ktx",
+    "version": "7.1.1",
+    "name": "Google Play Billing Library",
+    "spdxLicenses": [
+      {
+        "identifier": "Apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0"
+      }
+    ],
+    "scm": {
+      "url": "https://github.com/com.android.billingclient"
+    }
+  },
+  {
+    "groupId": "com.google.android.play",
+    "artifactId": "app-update-ktx",
+    "version": "2.1.0",
+    "name": "In-App Updates Library",
+    "spdxLicenses": [
+      {
+        "identifier": "Apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0"
+      }
+    ],
+    "scm": {
+      "url": "https://github.com/com.google.android.play"
+    }
+  },
+  {
+    "groupId": "com.google.android.flexbox",
+    "artifactId": "flexbox",
+    "version": "3.0.0",
+    "name": "Flexbox Layout",
+    "spdxLicenses": [
+      {
+        "identifier": "Apache-2.0",
+        "name": "Apache License 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0"
+      }
+    ],
+    "scm": {
+      "url": "https://github.com/com.google.android.flexbox"
+    }
+  },
+  {
+    "groupId": "com.google.android.gms",
+    "artifactId": "google-sans-flex",
+    "version": "1.0.0",
+    "name": "Google Sans Flex",
+    "spdxLicenses": [
+      {
+        "identifier": "OFL-1.1",
+        "name": "SIL Open Font License 1.1",
+        "url": "https://openfontlicense.org"
+      }
+    ],
+    "scm": {
+      "url": "https://github.com/googlefonts/google-sans"
+    }
+  }
+]
