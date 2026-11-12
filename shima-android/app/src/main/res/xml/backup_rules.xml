@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<full-backup-content>
-    <include domain="sharedpref" path="." />
-    <!-- The Pro entitlement belongs to the Play purchase on this device and must not travel. -->
-    <exclude domain="sharedpref" path="island_pro.xml" />
-</full-backup-content>
