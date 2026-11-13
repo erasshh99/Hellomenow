@@ -1,0 +1,8 @@
+# Decompiled sources are NOT published.
+#
+# re/decompiled/ contains R8-decompiled Java source and smali belonging to
+# "Shima" (com.piyush.island), copyright Piyush Mamidwar.
+# Publishing that source is a copyright matter separate from (and larger than)
+# the rights in the original APK, so it stays local. The analysis documents
+# (REPORT.md / BEHAVIOUR-ANALYSIS.md) cite it by path and line instead.
+decompiled/
