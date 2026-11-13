@@ -56,9 +56,23 @@ See `REPORT.md` §4b for the mechanism and the on-device verification.
 |---|---|
 | [`REPORT.md`](REPORT.md) | Main report: DRM/anti-tamper analysis, network audit, permission review, build & verification steps, corrections log |
 | [`BEHAVIOUR-ANALYSIS.md`](BEHAVIOUR-ANALYSIS.md) | Deep behavioural map: actions, rules & triggers, notification parsing, storage, backup, abuse assessment |
+| [`VERIFICATION.md`](VERIFICATION.md) | Independent re-verification of the delivered build: container, content diff, dex patch, signatures, alignment |
 
 `re/decompiled/` (decompiled sources) is intentionally **not** published — see
 `re/.gitignore`.
+
+## Re-running the verification
+
+```sh
+# container, APK signing block, alignment, diff against the original
+python3 re/verify.py
+
+# signature verification with Google's own apksig library
+curl -sSLO https://dl.google.com/dl/android/maven2/com/android/tools/build/apksig/8.7.3/apksig-8.7.3.jar
+javac -cp apksig.jar -d /tmp re/VerifyApk.java
+java -Dmincheck=21 -cp apksig.jar:/tmp VerifyApk re/Shima-v0.5.1-pairip-bypassed-signed.apk
+```
+
 
 ## Verification performed
 

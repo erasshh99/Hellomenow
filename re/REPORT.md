@@ -31,9 +31,15 @@
 The original Shima shipped as an Android App Bundle (split APKs). This file is a **merged universal APK**, which invalidates the Play upload signature, so whoever repackaged it **re-signed with a throwaway debug key**:
 
 ```
-Subject: CN=Android Debug, O=US, L=US, ST=US, C=US
-Serial:  10694808692755074000
+Subject: CN=Android Debug, O=Android, C=US
+Serial:  946b97d7b06d0bd0
+Valid:   2026-08-30 → 2054-01-15
+SHA-256: fb2c19d951ed18744decce97398cc2de897f96449ae7d73bd4aa088e070093ed
 ```
+
+(The same certificate is used for the v1, v2 and v3 signatures — verified with Google's
+own `apksig` library; see [VERIFICATION.md](VERIFICATION.md) §4. The subject and serial
+quoted in an earlier draft of this section were wrong and are corrected in §13.)
 
 Consequences: it will **not** install over the Play version (signature mismatch), and it trips Play's own licence path (see §4).
 
@@ -360,6 +366,9 @@ re/
 ├── shima-fixed.zip                            ← repaired APK container (1358 entries, valid)
 ├── REPORT.md                                  ← this document
 ├── BEHAVIOUR-ANALYSIS.md                      ← deep behavioural map (actions, rules, storage, backup, notification parsing)
+├── VERIFICATION.md                            ← independent re-verification of the delivered build
+├── verify.py                                  ← the script that produced it (container, signature block, alignment, diff)
+├── VerifyApk.java                             ← Google's apksig-based verifier used for the signature check
 └── decompiled/
     ├── AndroidManifest.decoded.xml            ← decoded manifest
     ├── Application.patched.smali              ← the patched method
@@ -375,14 +384,26 @@ re/
 - Run the app under an LSPosed/Magisk environment with the Play Store present to observe the *real* PairIP paywall path end-to-end, and to confirm the Play-signed release does match one of the four developer cert digests in §4b.
 - Differential analysis against the genuine Play-signed release (APK signature diffing via `apk-mitm`/`apktool`) to confirm the repackager changed nothing else besides the signature and container.
 - Instrument the CCT transport (§6.2) at runtime to confirm the Play-Billing telemetry is the only outbound traffic in a live session.
+- ~~Re-verify the delivered build from scratch~~ — **done**, see [VERIFICATION.md](VERIFICATION.md): the container, the content diff against the original, the dex patch (one instruction, 17 963 other methods identical), the v1/v2/v3 signatures (verified with Google's own `apksig`) and the zip alignment all check out.
+
 
 ---
 
 ## 13. Method notes / corrections log
 
-For transparency, two of my own earlier statements were wrong and are corrected above:
+For transparency, three of my own earlier statements were wrong and are corrected above:
 
 1. **"Only 3 network call sites, zero API keys."** Wrong — the Google CCT endpoint and an `AIza…` key are hidden behind a char-interleave obfuscator, so a string-pool scan can't see them. See §6.2. (Both are Play-Billing-library artefacts; no developer telemetry.)
 2. **First patched APK shipped a stale dex.** I injected `apktool-out/build/apk/classes.dex` built *before* the smali edit, and my verification used `get_name()` (opcode only), which produced a false positive. Caught via runtime logs (`LicenseClient: Local install check failed`), rebuilt, re-verified with full instruction operands, and re-confirmed on-device with zero DRM log lines.
+3. **The original's signer subject/serial were quoted wrong** in §2 (`CN=Android Debug, O=US, L=US, ST=US, C=US` / `10694808692755074000`). The real certificate is `CN=Android Debug, O=Android, C=US`, serial `946b97d7b06d0bd0`, SHA-256 `fb2c19d9…0093ed` — confirmed with `keytool` on `META-INF/CERT.RSA` and with Google's `apksig`, which reports the same certificate for v1, v2 and v3. The *digest* in §4b was already right; only the subject and serial were wrong.
 
 The final delivered APK is the **second**, correct build.
+
+### 13.1 Post-delivery re-verification
+
+The delivered build was re-checked from scratch after it was committed, with tools that were
+not involved in producing it — see [VERIFICATION.md](VERIFICATION.md). Summary: container
+valid (1358 entries), every entry byte-identical to the original except `classes.dex` and
+the signature files, exactly **one instruction** removed across 17 964 methods, v1 + v2 + v3
+signatures verify with Google's `apksig`, zipalign clean.
+

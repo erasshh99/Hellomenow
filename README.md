@@ -19,6 +19,7 @@ removed so the app can be analysed without a Play Store licence.
 - [`re/`](re/) — the bypassed build, the repaired container, and the analysis:
   - [`re/REPORT.md`](re/REPORT.md) — DRM & anti-tamper analysis, network audit, permission review, verification steps
   - [`re/BEHAVIOUR-ANALYSIS.md`](re/BEHAVIOUR-ANALYSIS.md) — actions, rules, notification parsing, storage, backup, abuse assessment
+  - [`re/VERIFICATION.md`](re/VERIFICATION.md) — independent re-verification of the delivered build (container, content diff, dex patch, signatures, alignment)
 
 Decompiled sources are not published (see `re/.gitignore`).
 
