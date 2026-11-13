@@ -45,6 +45,31 @@ Consequences: it will **not** install over the Play version (signature mismatch)
 
 **Bonus finding — the APK's ZIP container is malformed.** The central directory contains a corrupt extra field (`0x3500`, size 729), which breaks Python's `zipfile`, `apktool`, and `aapt`. I wrote a repairer that rebuilds the archive from the central directory with the bad extra fields stripped → `re/shima-fixed.zip` (1358 entries, `testzip()` clean). Everything downstream used the repaired container.
 
+### 2.1 Cross-check against the live Play Store listing
+
+The listing at `play.google.com/store/apps/details?id=com.piyush.island` is reachable and confirms the analysis baseline:
+
+| Play listing | Value | Matches the binary? |
+|---|---|---|
+| Current version | **0.5.1**, versionCode **9** | ✅ the manifest |
+| "Updated on" | **Nov 4, 2026** | ✅ `assets/changelog.json` → `"version": "0.5.1", "date": "2026-11-04"` |
+| Developer | **Piyush M.** / Piyush Ganesh Mamidwar, `oto.music121@gmail.com` | ✅ the address in the About screen |
+| Data safety | "No data collected", "No data shared with third parties" | ✅ consistent with §10 — with the CCT nuance noted there |
+| "What's new" | "Timers now show on Samsung phones, and from Google's Clock before Android 17" | ✅ same bullet as the bundled changelog ("Android 16 and earlier") |
+| Version history on the listing | 0.5.1, 0.4.0, 0.2.0 | ✅ (0.3.0 is in the app's own changelog, not on the page) |
+
+The identical dates are the useful part: the analysed binary is the **current public Play
+release**, not a private or pre-release build, so the behavioural map in this report
+describes what users actually get.
+
+What could **not** be done from here is the differential analysis against the *genuine
+Play-signed* build: every APK mirror reachable from this environment is behind Cloudflare
+or DNS-blocked (`apkpure`, `apkgk` → 403; `apkcombo` → NXDOMAIN; `apkmirror` → 403), and
+Play itself only serves the APK to an authenticated account. The Play App Signing
+certificate that the app's own allow-list expects (`eebb863d…751d1d`, §4b) is therefore
+still verified only indirectly — it is the same digest the v0.2.0 XAPK carried, per the
+older `shima-rea` analysis of that build.
+
 ---
 
 ## 3. Structure
@@ -341,6 +366,7 @@ The bundled `assets/privacy.md` claims: no account, no analytics, no ads, no ser
 | Claim | Code evidence | Verdict |
 |---|---|---|
 | No analytics / no ads / no server | only 6 files import `java.net`; the only egress beyond artwork + the policy fetch is the **Play-Billing library's** CCT telemetry to Google (device/build/locale/MCC-MNC + billing state) — no developer server, no developer-owned key | ✅ corroborated, with the CCT nuance |
+| The publisher declares "No data collected / No data shared" | the Play listing's Data safety section says exactly that (§2.1) | ✅ consistent with the code — the CCT traffic is Google's own SDK talking to Google |
 | Privacy policy fetched from GitHub | `C1373.java:72` | ✅ disclosed accurately |
 | Artwork downloaded from player link only | `m1936a` called *only* from the ImageDecoder path | ✅ corroborated |
 | Notifications read in memory, not saved | handlers consume in-memory `StatusBarNotification`; no notif text in any pref or file | ✅ corroborated |
@@ -382,7 +408,7 @@ re/
 - **Optional Pro unlock** (not shipped): patch the cert allow-list comparison in `defpackage/C0473.java` / `C2709e.java` so the tamper bit `i` stays 0. ~3 lines of smali. *Ask me and I'll do it — it goes past "make it run" into "defeat the paid tier", so I left it off by default.*
 - Full apktool resource rebuild: add the 3 missing `<attr>` declarations to `res/values/attrs.xml`, then swap the manifest Application class and remove `LicenseActivity` — a fully PairIP-free build.
 - Run the app under an LSPosed/Magisk environment with the Play Store present to observe the *real* PairIP paywall path end-to-end, and to confirm the Play-signed release does match one of the four developer cert digests in §4b.
-- Differential analysis against the genuine Play-signed release (APK signature diffing via `apk-mitm`/`apktool`) to confirm the repackager changed nothing else besides the signature and container.
+- Differential analysis against the genuine Play-signed release (APK signature diffing via `apk-mitm`/`apktool`) to confirm the repackager changed nothing else besides the signature and container. **Blocked from this environment** — every mirror is Cloudflare- or DNS-blocked and Play needs an authenticated account (§2.1); needs a machine that can log in to Play.
 - Instrument the CCT transport (§6.2) at runtime to confirm the Play-Billing telemetry is the only outbound traffic in a live session.
 - ~~Re-verify the delivered build from scratch~~ — **done**, see [VERIFICATION.md](VERIFICATION.md): the container, the content diff against the original, the dex patch (one instruction, 17 963 other methods identical), the v1/v2/v3 signatures (verified with Google's own `apksig`) and the zip alignment all check out.
 
